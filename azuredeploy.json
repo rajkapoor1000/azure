@@ -132,7 +132,7 @@
           "imageReference": {
             "publisher": "[variables('imagePublisher')]",
             "offer": "[variables('imageOffer')]",
-            "sku": "[parameters('rhelOSVersion')]",
+            "sku": "[parameters('OSVersion')]",
             "version": "latest"
           },
           "osDisk": {
