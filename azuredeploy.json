@@ -9,9 +9,9 @@
       }
     },
     "adminPassword": {
-      "type": "Pa55w0rd123!",
+      "type": "string",
       "metadata": {
-        "description": "Password for the Virtual Machine.`Must be more than 7 characters and contain various special chars etc"
+        "description": "Password for the Virtual Machine.Must be more than 7 characters and various special chars etc"
       }
     },
     "OSVersion": {
