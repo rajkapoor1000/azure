@@ -8,6 +8,10 @@
         "description": "The copy count"
       }
     },
+    "theCount": { 
+    	"type": "int", 
+    	"defaultValue": 2 
+  	} 
     "vmName": {
       "type": "string",
       "metadata": {
@@ -103,8 +107,7 @@
       "name": "[concat(variables('publicIPAddressName'),copyIndex())]",
       "copy": {
             "name": "VMpubipLoop",
-            "count": "2"
- 
+            "count": "[parameters('theCount')]"
         },
       "location": "[variables('location')]",
       "properties": {
