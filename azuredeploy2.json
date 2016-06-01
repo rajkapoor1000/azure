@@ -175,7 +175,7 @@
       "location": "[variables('location')]",
       "dependsOn": [
         "[concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
-        "[concat('Microsoft.Network/networkInterfaces/', 'myVMNic1']"
+        "[concat('Microsoft.Network/networkInterfaces/', 'myVMNic1')]"
       ],
       "properties": {
         "hardwareProfile": {
