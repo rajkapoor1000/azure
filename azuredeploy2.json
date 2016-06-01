@@ -175,7 +175,7 @@
       "location": "[variables('location')]",
       "dependsOn": [
         "[concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
-        "[concat('Microsoft.Network/networkInterfaces/', variables('nicName'), '1')]"
+        "[concat('Microsoft.Network/networkInterfaces/', 'myVMNic1']"
       ],
       "properties": {
         "hardwareProfile": {
@@ -216,7 +216,7 @@
         "networkProfile": {
           "networkInterfaces": [
             {
-              "id": "[resourceId('Microsoft.Network/networkInterfaces',concat(variables('nicName'),'1'))]"
+              "id": "[resourceId('Microsoft.Network/networkInterfaces','myVMNic1')]"
             }
           ]
         },
