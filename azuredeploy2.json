@@ -8,6 +8,12 @@
         "description": "The Name for the Virtual Machine."
       }
     },
+    "privateIPaddy": {
+      "type": "string",
+      "metadata": {
+        "description": "The Static Private IP Address of the Virtual Machine"
+      }
+    },
     "adminUsername": {
       "type": "string",
       "metadata": {
@@ -129,7 +135,8 @@
           {
             "name": "ipconfig1",
             "properties": {
-              "privateIPAllocationMethod": "Dynamic",
+              "privateIPAllocationMethod": "Static",
+              "privateIPAddress": "[parameters('privateIPaddy')]",
               "publicIPAddress": {
                 "id": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))]"
               },
