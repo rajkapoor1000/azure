@@ -198,7 +198,7 @@
             "version": "latest"
           },
           "osDisk": {
-            "name": "osdisk",
+            "name": "[concat('osdisk',copyIndex())]",
             "vhd": {
               "uri": "[concat('http://',variables('storageAccountName'),'.blob.core.windows.net/',variables('vmStorageAccountContainerName'),'/',variables('OSDiskName'),copyIndex(),'.vhd')]"
             },
@@ -207,7 +207,7 @@
           },
           "dataDisks": [
             {
-              "name": "datadisk1",
+              "name": "[concat('datadisk1',copyIndex())]",
               "diskSizeGB": "100",
               "lun": 0,
               "vhd": {
