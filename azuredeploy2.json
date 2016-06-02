@@ -171,7 +171,7 @@
     {
       "apiVersion": "[variables('apiVersion')]",
       "type": "Microsoft.Compute/virtualMachines",
-      "name": "[parameters('vmName')]",
+      "name": "[concat(parameters('vmName'),copyIndex())]",
       "location": "[variables('location')]",
       "copy": {
             "name": "VMloop",
@@ -186,7 +186,7 @@
           "vmSize": "[parameters('vmSize')]"
         },
         "osProfile": {
-          "computerName": "[concat(variables('vmName'),copyIndex())]",
+          "computerName": "[concat(parameters('vmName'),copyIndex())]",
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]"
         },
