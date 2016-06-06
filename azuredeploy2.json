@@ -73,7 +73,14 @@
             "allowedValues": [
                 "Standard_D1", "Standard_D2", "Standard_D3"
             ]
-    }
+    },
+    "orgRaj": { 
+     "type": "array", 
+         "defaultValue": [ 
+         "Contoso", 
+         "Fabrikam" 
+      ] 
+  	}
   },
   "variables": {
     "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'rhelvm')]",
@@ -186,7 +193,7 @@
           "vmSize": "[parameters('vmSize')]"
         },
         "osProfile": {
-          "computerName": "[concat(parameters('vmName'),copyIndex())]",
+          "computerName": "[parameters('orgRaj')[copyIndex()]]",
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]"
         },
