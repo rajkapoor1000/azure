@@ -204,7 +204,7 @@
           "vmSize": "[parameters('vmSizeArr')[copyIndex()]]"
         },
         "osProfile": {
-          "computerName": "[parameters('vmNameArr')[copyIndex()]]",
+          "computerName": "[concat('fredvm',copyIndex())]",
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]"
         },
