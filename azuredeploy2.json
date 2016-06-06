@@ -12,24 +12,6 @@
     	"type": "int", 
     	"defaultValue": 2 
   	},
-  	"vmNameArr": {
-      "type": "array",
-      "metadata": {
-        "description": "The Array of Names for the Virtual Machines."
-      }
-    },
-    "privateIPaddyArr": {
-      "type": "array",
-      "metadata": {
-        "description": "The Array of Private IP Addresses"
-      }
-    },
-    "vmSizeArr": {
-      "type": "array",
-      "metadata": {
-        "description": "The Array of sizes of the Virtual Machines"
-      }
-    },
     "vmName": {
       "type": "string",
       "metadata": {
@@ -201,10 +183,10 @@
       ],
       "properties": {
         "hardwareProfile": {
-          "vmSize": "[parameters('vmSizeArr')[copyIndex()]]"
+          "vmSize": "[parameters('vmSize')]"
         },
         "osProfile": {
-          "computerName": "[concat('fredvm',copyIndex())]",
+          "computerName": "[concat(parameters('vmName'),copyIndex())]",
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]"
         },
